@@ -55,6 +55,10 @@
   .contacts svg {
     top: 193px;
   }
+  .getUp svg {
+    right: 7px;
+    bottom: 7px;
+  }
 }
 @media all and (max-width: 1370px) {
   .wrapper {
@@ -171,6 +175,9 @@
     font-size: 33px;
     width: 550px;
   }
+  .content {
+    padding-top: 200px;
+  }
   .content > p {
     width: 500px;
   }
@@ -186,4 +193,258 @@
   .about .about_content p {
     text-align: justify;
   }
-}
+  .our_service .row{
+    display: block;
+    margin: 0;
+  }
+  .our_service .row .block{
+    width: 600px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+  .our_service .row:nth-of-type(2) .block,
+  .our_service .row:nth-of-type(1) .block, 
+  .our_service .row:nth-of-type(3) .block {
+    width: 600px;
+  }
+  .our_service .row:nth-of-type(1) .block:nth-of-type(1) p {
+    margin: 35px auto;
+  }
+  .our_service .row:nth-of-type(1) .block:nth-of-type(2) p {
+    margin: 38px auto;
+  }
+  .our_service .row:nth-of-type(1) .block:nth-of-type(2) svg {
+    left: 75px;
+    top: 79px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(1) p {
+    margin: 53px auto;
+  }
+  .our_service .row:nth-of-type(2) .block p {
+    width: 300px;
+  }
+  .our_service .row:nth-of-type(2) .block p {
+    width: 305px;
+    margin-top: 5px;
+  }
+  .our_service .row:nth-of-type(3) .block:nth-of-type(1) p {
+    margin: 40px auto;
+  }
+  .our_service .row:nth-of-type(3) .block:nth-of-type(2) svg {
+    top: 50px;
+  }
+  .our_service .row:nth-of-type(1) .block:nth-of-type(2) > div img {
+    width: 500px;
+    left: -146px;
+    top: -30px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(1) > div img {
+    width: 415px;
+    top: -67px;
+    left: -211px;
+  }
+  .our_service .row:nth-of-type(1) .block:nth-of-type(1) > div img {
+    width: 451px;
+    top: -66px;
+    left: -154px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(2) > div img {
+    width: 389px;
+    top: -6px;
+    left: -6px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(3) > div img {
+    width: 605px;
+  }
+  .our_service .row:nth-of-type(3) .block:nth-of-type(2) > div img {
+    width: 563px;
+    left: -170px;
+  }
+  .advantage .wrapper {
+    padding: 25px 0 120px;
+  }
+  .advantage .wrap .block {
+    width: 600px;
+    height: 130px;
+  }
+  .advantage .wrap .block svg:first-of-type {
+    margin: 23px 33px 0 41px;
+  }
+  .advantage .wrap .block p {
+    margin-top: 13px;
+  }
+  .advantage .wrapper {
+    padding: 25px 0 11px;
+  }
+  .contacts .wrapper{
+    display: block;
+  }
+  .contacts .address, 
+  .contacts .feedback {
+    width: 600px;
+  }
+  .contacts .address {
+    padding: 31px 35px;
+    height: 283px;
+    margin-bottom: 25px;
+  }
+  .contacts svg {
+    top: 468px;
+  }
+  .map {
+    height: 300px;
+  }
+  footer .wrapper {
+    padding-top: 20px;
+  }
+  footer .wrap {
+    justify-content: space-around;
+  }
+  footer .wrap ul{
+    width: 250px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(1) svg {
+    top: 15px;
+  }
+}  
+@media all and (max-width: 620px) {
+  .wrapper {
+    width: 340px;
+  }
+  .telephone {
+    width: 250px;
+  }
+  .telephone a > p{
+    font-size: 16px;
+  }
+  header > svg:first-of-type {
+    width: 203px;
+    height: 69px;
+  }
+  h1 {
+    width: 340px;
+    line-height: 42px;
+  }
+  .content {
+    padding-top: 140px;
+  }
+  header .wrapper > svg {
+    bottom: -17.96%;
+  }
+  .content > p {
+    width: 340px; 
+  }
+  .about .about_img {
+    width: 340px;
+    height: 250px;
+    background-size: contain;
+  }
+  h2{
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .about .about_content {
+    width: 340px;
+  }
+  .our_service h2 {
+    margin-bottom: 25px;
+  }
+  .our_service .row:nth-of-type(2) .block, 
+  .our_service .row:nth-of-type(1) .block, 
+  .our_service .row:nth-of-type(3) .block {
+    width: 340px;
+  }
+  .our_service .row:nth-of-type(1) .block p, .our_service .row:nth-of-type(3) .block p {
+    width: 200px;
+  }
+  .our_service .row .block p, 
+  .our_service .row:nth-of-type(1) .block:nth-of-type(2) p,
+  .our_service .row:nth-of-type(2) .block:nth-of-type(1) p,
+  .our_service .row:nth-of-type(2) .block:nth-of-type(2) p {
+    font-size: 15px;
+    margin-left: 10px;
+    line-height: 28px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(3) p {
+  margin: 5px 0 0 35px;
+  }
+  .our_service .row:nth-of-type(3) .block:nth-of-type(1) p {
+    margin: 24px 0px 0px 10px;
+  }
+  .our_service .row:nth-of-type(3) .block:nth-of-type(2) p {
+    margin: 50px 0px 0px 10px;
+  }
+  .our_service .row:nth-of-type(3) .block:nth-of-type(2) svg {
+    right: -120px;
+  }
+  .our_service .row:nth-of-type(1) .block:nth-of-type(1) > div img {
+    left: -189px;
+  }
+  .our_service .row:nth-of-type(1) .block:nth-of-type(2) svg {
+    left: -133px;
+    top: 101px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(1) svg {
+    top: 82px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(1) > div img {
+    left: -244px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(2) > div img {
+    top: -77px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(3) > div img {
+    width: 349px;
+  }
+  .our_service .row:nth-of-type(2) .block:nth-of-type(3) > div img {
+    top: -20px;
+  }
+  .advantage .wrap .block {
+    width: 340px;
+  }
+  .advantage .wrap .block p {
+    font-size: 16px;
+    line-height: 21px;
+    margin-top: 23px;
+  }
+  .advantage .wrap .block svg:first-of-type {
+    margin: 8px 15px 0 15px;
+  }
+  .advantage .wrap .block svg:last-of-type {
+    margin-top: 33px;
+    margin-right: 30px;
+  }
+  .contacts .address, .contacts .feedback {
+    width: 340px;
+  }
+  .contacts .address p {
+    font-size: 19px;
+  }
+  .contacts .feedback > p {
+    font-size: 18px;
+  }
+  .contacts .feedback input {
+    width: 340px;
+    font-size: 18px;
+    height: 30px;
+  }
+  .contacts .feedback p {
+    font-size: 14px;
+  }
+  .contacts .feedback textarea {
+    width: 340px;
+  }
+  .contacts svg {
+    top: 558px;
+  }
+  footer .wrap ul {
+    width: 340px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+  footer .wrap {
+    display: block;
+  }
+}   
+
+
