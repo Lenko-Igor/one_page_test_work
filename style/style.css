@@ -24,10 +24,33 @@ p {
 a {
   text-decoration: none;
 }
-a:hover{
+a:hover {
   text-decoration: none;
 }
 /* header */
+.navBar {
+  width: 300px;
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 80px;
+  text-align: right;
+  background-color: #ffffff4d;
+  opacity: 0;
+  display: none;
+}
+.navBar ul {
+  list-style: none;
+}
+.navBar a {
+  font-size: 19px;
+  font-weight: bold;
+  color: black;
+  line-height: 53px;
+}
+.navBar a:hover {
+  color: #1eddfb;
+}
 header {
   overflow: hidden;
   position: relative;
@@ -88,7 +111,20 @@ header .wrapper > svg {
   cursor: pointer;
   padding: 13px 14px 14px 13px;
 }
-#slider_1 h1, #slider_2 > p:first-child, #slider_3 > p:first-child{
+.menubar:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.25);
+}
+#cls {
+  font-size: 33px;
+  color: red;
+  display: none;
+}
+#slider_1 h1,
+#slider_2 > p:first-child,
+#slider_3 > p:first-child,
+#slider_4 > p:first-child,
+#slider_5 > p:first-child,
+#slider_6 > p:first-child {
   margin-top: 260px;
   width: 735px;
   height: 121px;
@@ -98,55 +134,103 @@ header .wrapper > svg {
   color: #212529;
   margin-bottom: 25px;
 }
-#slider_1{
+#slider_1 {
   background: linear-gradient(
-    269.51deg,
-    #eaf0ee 0.54%,
-    rgba(255, 255, 255, 0) 24.64%
-  ),
-  linear-gradient(
-    90deg,
-    rgba(234, 240, 238, 0.95) 9.42%,
-    rgba(243, 246, 245, 0.6) 39.36%,
-    rgba(255, 255, 255, 0) 56.77%
-  ),
-  url(../img/main_image_1.1.jpg) no-repeat;
+      269.51deg,
+      #eaf0ee 0.54%,
+      rgba(255, 255, 255, 0) 24.64%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(234, 240, 238, 0.95) 9.42%,
+      rgba(243, 246, 245, 0.6) 39.36%,
+      rgba(255, 255, 255, 0) 56.77%
+    ),
+    url(../img/main_image_1.1.jpg) no-repeat;
   opacity: 0.95;
   background-size: cover;
 }
-#slider_2{
+#slider_2 {
   background: linear-gradient(
-    269.51deg,
-    #eaf0ee 0.54%,
-    rgba(255, 255, 255, 0) 24.64%
-  ),
-  linear-gradient(
-    90deg,
-    rgba(234, 240, 238, 0.95) 9.42%,
-    rgba(243, 246, 245, 0.6) 39.36%,
-    rgba(255, 255, 255, 0) 56.77%
-  ),
-  url(../img/block_2.jpg) no-repeat;
+      269.51deg,
+      #eaf0ee 0.54%,
+      rgba(255, 255, 255, 0) 24.64%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(234, 240, 238, 0.95) 9.42%,
+      rgba(243, 246, 245, 0.6) 39.36%,
+      rgba(255, 255, 255, 0) 56.77%
+    ),
+    url(../img/block_2.jpg) no-repeat;
   opacity: 0.95;
   background-size: cover;
 }
-#slider_3{
+#slider_3 {
   background: linear-gradient(
-    269.51deg,
-    #eaf0ee 0.54%,
-    rgba(255, 255, 255, 0) 24.64%
-  ),
-  linear-gradient(
-    90deg,
-    rgba(234, 240, 238, 0.95) 9.42%,
-    rgba(243, 246, 245, 0.6) 39.36%,
-    rgba(255, 255, 255, 0) 56.77%
-  ),
-  url(../img/block_3.png) no-repeat;
+      269.51deg,
+      #eaf0ee 0.54%,
+      rgba(255, 255, 255, 0) 24.64%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(234, 240, 238, 0.95) 9.42%,
+      rgba(243, 246, 245, 0.6) 39.36%,
+      rgba(255, 255, 255, 0) 56.77%
+    ),
+    url(../img/block_3.png) no-repeat;
   opacity: 0.95;
   background-size: cover;
 }
-.slider{
+#slider_4 {
+  background: linear-gradient(
+      269.51deg,
+      #eaf0ee 0.54%,
+      rgba(255, 255, 255, 0) 24.64%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(234, 240, 238, 0.95) 9.42%,
+      rgba(243, 246, 245, 0.6) 39.36%,
+      rgba(255, 255, 255, 0) 56.77%
+    ),
+    url(../img/block_4.jpg) no-repeat;
+  opacity: 0.95;
+  background-size: cover;
+}
+#slider_5 {
+  background: linear-gradient(
+      269.51deg,
+      #eaf0ee 0.54%,
+      rgba(255, 255, 255, 0) 24.64%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(234, 240, 238, 0.95) 9.42%,
+      rgba(243, 246, 245, 0.6) 39.36%,
+      rgba(255, 255, 255, 0) 56.77%
+    ),
+    url(../img/block_5.jpg) no-repeat;
+  opacity: 0.95;
+  background-size: cover;
+}
+#slider_6 {
+  background: linear-gradient(
+      269.51deg,
+      #eaf0ee 0.54%,
+      rgba(255, 255, 255, 0) 24.64%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(234, 240, 238, 0.95) 9.42%,
+      rgba(243, 246, 245, 0.6) 39.36%,
+      rgba(255, 255, 255, 0) 56.77%
+    ),
+    url(../img/block_6.jpg) no-repeat;
+  opacity: 0.95;
+  background-size: cover;
+}
+.slider {
   height: 800px;
 }
 .content .slider > p {
@@ -155,7 +239,8 @@ header .wrapper > svg {
   color: #454547;
   margin-bottom: 40px;
 }
-#left, #right{
+#left,
+#right {
   width: 45px;
   height: 45px;
   background: #ffffff;
@@ -166,27 +251,29 @@ header .wrapper > svg {
   padding: 11px;
   top: 616px;
 }
-#right{
+#right {
   left: 61px;
 }
 
-.content .slider .detailed{
+.content .slider .detailed {
   width: 223px;
-    height: 45px;
-    background: linear-gradient(180deg, #27214a 0%, rgba(118, 110, 162, 0) 100%), #27214a;
-    box-shadow: 0px 4px 4px rgba(72, 72, 76, 0.25);
-    border-radius: 10px;
-    padding: 11px 54px 11px 64px;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 23px;
-    display: block;
-    margin-bottom: 86px;
-    margin-left: 30px;
+  height: 45px;
+  background: linear-gradient(180deg, #27214a 0%, rgba(118, 110, 162, 0) 100%),
+    #27214a;
+  box-shadow: 0px 4px 4px rgba(72, 72, 76, 0.25);
+  border-radius: 10px;
+  padding: 11px 54px 11px 64px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  display: block;
+  margin-bottom: 86px;
+  margin-left: 30px;
 }
-.content .slider .detailed:hover{
+.content .slider .detailed:hover {
   box-shadow: 0px 6px 4px rgba(72, 72, 76, 0.55);
+  color: #1eddfb;
 }
 
 /* about */
@@ -260,6 +347,7 @@ header .wrapper > svg {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
 }
 .our_service .row .block p {
   font-style: normal;
@@ -628,23 +716,18 @@ footer h3 {
 footer ul {
   display: block;
   list-style-type: none;
-  /* font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  color: #ffffff; */
 }
 footer ul li {
   margin-bottom: 18px;
 }
-footer ul li a{
+footer ul li a {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 21px;
   color: #ffffff;
 }
-footer ul li a:hover{
+footer ul li a:hover {
   color: #1eddfb;
 }
 footer .social_link {
@@ -654,13 +737,13 @@ footer .social_link {
   height: 47px;
   margin-top: 105px;
 }
-footer .social_link a{
+footer .social_link a {
   width: 47px;
   height: 47px;
   display: block;
   overflow: hidden;
 }
-footer .social_link a:hover{
+footer .social_link a:hover {
   border-radius: 50%;
 }
 .getUp svg {

@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Информационные услуги</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://kit.fontawesome.com/c88fc5da2a.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/media.css">
 </head>
@@ -21,6 +22,16 @@
       <path d="M0 0 H937 L0 316 L0 0Z" fill="white" />
     </svg>
     <div class="wrapper">
+      <!-- открывающееся меню -->
+      <div class="navBar">
+        <ul>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#servis">Наши услуги</a></li>
+          <li><a href="#advantage">Преимущества аутсорсинга</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+
       <div class="menu">
         <div class="telephone">
           <svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +44,8 @@
           </a>
         </div>
         <div class="menubar">
-          <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <i id="cls" class="far fa-times-circle"></i>
+          <svg id="opn" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M31.7109 15.2109H1.28906C0.577113 15.2109 0 15.7881 0 16.5C0 17.2119 0.577113 17.7891 1.28906 17.7891H31.7109C32.4229 17.7891 33 17.2119 33 16.5C33 15.7881 32.4229 15.2109 31.7109 15.2109Z"
               fill="#48484C" />
@@ -44,29 +56,47 @@
               d="M31.7109 25.5234H1.28906C0.577113 25.5234 0 26.1006 0 26.8125C0 27.5244 0.577113 28.1016 1.28906 28.1016H31.7109C32.4229 28.1016 33 27.5244 33 26.8125C33 26.1006 32.4229 25.5234 31.7109 25.5234Z"
               fill="#48484C" />
           </svg>
-
         </div>
       </div>
       <div class="content">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div id="slider_1" class="carousel-item active slider">
-              <h1>Информационные услуги в области безопасности</h1>
+              <h1>Информационные услуги<br> в области безопасности</h1>
               <p>Проверка деловой репутации компании
               </p>
-              <a href="" class="detailed">Подробнее</a>
+              <a href="#servis" class="detailed">Подробнее</a>
             </div>
             <div id="slider_2" class="carousel-item slider">
               <p>Услуги по обеспечению безопасности</p>
               <p>Сохранность информации
               </p>
-              <a href="" class="detailed">Подробнее</a>
+              <a href="#servis" class="detailed">Подробнее</a>
             </div>
             <div id="slider_3" class="carousel-item slider">
-              <p>Услуги в области трудовых отношений</p>
+              <p>Услуги в области<br>трудовых отношений</p>
               <p>Область трудовых отношений
               </p>
-              <a href="" class="detailed">Подробнее</a>
+              <a href="#servis" class="detailed">Подробнее</a>
+            </div>
+            <div id="slider_4" class="carousel-item slider">
+              <p>Бухгалтерский<br>и налоговый учет</p>
+              <p>На высоком уровне бухгалтерский и налоговый учет
+              </p>
+              <a href="#servis" class="detailed">Подробнее</a>
+            </div>
+            <div id="slider_5" class="carousel-item slider">
+              <p>Услуги в области<br>маркетинга</p>
+              <p>Маркетинг высококлассными специалистами
+              </p>
+              <a href="#servis" class="detailed">Подробнее</a>
+            </div>
+            <div id="slider_6" class="carousel-item slider">
+              <p>Внедрение системы<br>менеджмента качества
+              </p>
+              <p>Даешь систему на каждом предприятии!!!
+              </p>
+              <a href="#servis" class="detailed">Подробнее</a>
             </div>
           </div>
           <a id="left" class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -81,7 +111,7 @@
               <path
                 d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z"
                 fill="#48484C" />
-            </svg> 
+            </svg>
           </a>
         </div>
       </div>
@@ -94,6 +124,7 @@
   </header>
   <article>
     <div class="about">
+      <a name="about"></a>
       <div class="wrapper">
         <div class="about_img">
           <p>.</p>
@@ -114,6 +145,7 @@
       </div>
     </div>
     <div class="our_service">
+      <a name="servis"></a>
       <div class="wrapper">
         <h2>Наши услуги</h2>
         <div class="row">
@@ -188,6 +220,7 @@
       </div>
     </div>
     <div class="advantage">
+      <a name="advantage"></a>
       <div class="wrapper">
         <h2>Преимущества аутсорсинга</h2>
         <div class="wrap">
@@ -314,6 +347,7 @@
       </div>
     </div>
     <div class="contacts">
+      <a name="contacts"></a>
       <div class="wrapper">
         <div class="address">
           <h2>Контакты</h2>
@@ -419,10 +453,13 @@
     </svg>
   </div>
 </body>
-<script src="script/index.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script> -->
+<script src="script/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 
 </html>
