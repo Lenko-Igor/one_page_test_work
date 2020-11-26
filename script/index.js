@@ -198,8 +198,6 @@ class Controller {
         })
       }
     },true)
- 
-    
   }
 
   toUp(){
