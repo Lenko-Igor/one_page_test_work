@@ -84,8 +84,12 @@ class View {
     }
   }
 
-  drawImgBlock(block, w){
+  drawImgBlockW(block, w){
     block.style.width = `${w}px`;
+  }
+
+  drawImgBlockH(block, h){
+    block.style.height = `${h}px`;
   }
 
 }
@@ -124,38 +128,75 @@ class Model {
     this.view.getVisualMenuBar();
   }
 
-  closeImg(e, width){
+  closeImg(e, width, height){
     let block = e.querySelector("div"),
-        w = width;
-    
-    requestAnimationFrame(getClosed.bind(this));
-    function getClosed(){
-      if(w > 0){
-        w -= 20;
-        this.view.drawImgBlock(block, w);
-        requestAnimationFrame(getClosed.bind(this));
-      }else{
-        w = 0;
-        this.view.drawImgBlock(block, w);
-        return;
+        w = width,
+        h = height,
+        step = 10,
+        hBlock = parseInt(getComputedStyle(e).height);
+
+    if(h < hBlock){
+      requestAnimationFrame(getClosed.bind(this));
+      function getClosed(){
+        if(h > 0){
+          h -= step;
+          this.view.drawImgBlockH(block, h);
+          requestAnimationFrame(getClosed.bind(this));
+        }else{
+          h = 0;
+          this.view.drawImgBlockH(block, h);
+          return;
+        }
+      }
+    }else{
+      requestAnimationFrame(getClosed.bind(this));
+      function getClosed(){
+        if(w > 0){
+          w -= step;
+          this.view.drawImgBlockW(block, w);
+          requestAnimationFrame(getClosed.bind(this));
+        }else{
+          w = 0;
+          this.view.drawImgBlockW(block, w);
+          return;
+        }
       }
     }
+
   }
 
-  openImg(e, width){
+  openImg(e, width, height){
     let block = e.querySelector("div"),
-        w = 0;
+        w = 0,
+        h = parseInt(getComputedStyle(block).height),
+        step = 10,
+        blockH = parseInt(getComputedStyle(block).height);
 
-    requestAnimationFrame(getOpened.bind(this));
-    function getOpened(){
-      if(w <= width){
-        this.view.drawImgBlock(block, w);
-        w += 20;
-        requestAnimationFrame(getOpened.bind(this));
-      }else{
-        w = width;
-        this.view.drawImgBlock(block, w);
-        return;
+    if(blockH < height){
+      requestAnimationFrame(getOpened.bind(this));
+      function getOpened(){
+        if(h < height){
+          this.view.drawImgBlockH(block, h);
+          h += step;
+          requestAnimationFrame(getOpened.bind(this));
+        }else{
+          h = height;
+          this.view.drawImgBlockH(block, h);
+          return;
+        }
+      }
+    }else{
+      requestAnimationFrame(getOpened.bind(this));
+      function getOpened(){
+        if(w <= width){
+          this.view.drawImgBlockW(block, w);
+          w += step;
+          requestAnimationFrame(getOpened.bind(this));
+        }else{
+          w = width;
+          this.view.drawImgBlockW(block, w);
+          return;
+        }
       }
     }
   }
@@ -191,10 +232,11 @@ class Controller {
       
       if(e.className === "block"){
         let width = parseInt(getComputedStyle(e.querySelector("div")).width);
+        let height = parseInt(getComputedStyle(e.querySelector("div")).height);
         
-        this.closeBlock(e, width);
+        this.closeBlock(e, width, height);
         e.addEventListener("mouseleave", () => {
-          this.openBlock(e, width);
+          this.openBlock(e, width, height);
         })
       }
     },true)
@@ -216,12 +258,12 @@ class Controller {
     this.model.moveMenuBar();
   }
 
-  closeBlock(e, width){
-    this.model.closeImg(e, width);
+  closeBlock(e, width, height){
+    this.model.closeImg(e, width, height);
   }
 
-  openBlock(e, width){
-    this.model.openImg(e, width);
+  openBlock(e, width, height){
+    this.model.openImg(e, width, height);
   }
 }
 
