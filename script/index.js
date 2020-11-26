@@ -84,39 +84,10 @@ class View {
     }
   }
 
-  resizeBlock(block, status, w){
-    const that = this;
-    let i = w;
-    let z = 0;
-    
-    if(status === "open"){
-      
-      requestAnimationFrame(reduceWidth);
-      function reduceWidth(){
-        i -= 20;
-        block.style.width = `${i}px`;
-        if(i <= 0){
-          block.style.width = `0px`;
-          return;
-        }
-        requestAnimationFrame(reduceWidth);
-      }
-    }
-    if(status === "close"){
-      
-      requestAnimationFrame(increaseWidth);
-      function increaseWidth(){
-        z += 20;
-        block.style.width = `${z}px`;
-        if(z >= w){
-          block.style.width = `${w}px`;
-          return;
-        }
-        requestAnimationFrame(increaseWidth);
-      }
-    }
-
+  drawImgBlock(block, w){
+    block.style.width = `${w}px`;
   }
+
 }
 
 // --- model --- //
@@ -153,8 +124,40 @@ class Model {
     this.view.getVisualMenuBar();
   }
 
-  getSizeBlock(block, status){
-    this.view.resizeBlock(block, status);
+  closeImg(e, width){
+    let block = e.querySelector("div"),
+        w = width;
+    
+    requestAnimationFrame(getClosed.bind(this));
+    function getClosed(){
+      if(w > 0){
+        w -= 20;
+        this.view.drawImgBlock(block, w);
+        requestAnimationFrame(getClosed.bind(this));
+      }else{
+        w = 0;
+        this.view.drawImgBlock(block, w);
+        return;
+      }
+    }
+  }
+
+  openImg(e, width){
+    let block = e.querySelector("div"),
+        w = 0;
+
+    requestAnimationFrame(getOpened.bind(this));
+    function getOpened(){
+      if(w <= width){
+        this.view.drawImgBlock(block, w);
+        w += 20;
+        requestAnimationFrame(getOpened.bind(this));
+      }else{
+        w = width;
+        this.view.drawImgBlock(block, w);
+        return;
+      }
+    }
   }
 }
 
@@ -183,27 +186,19 @@ class Controller {
       } 
     })
 
-    this.wrap.querySelectorAll(".block").forEach((elem) =>{
-      elem.addEventListener("mouseenter", (event) =>{
-        let e = event.target;
-        let img = e.querySelector("div");
-        let w = parseInt(getComputedStyle(img).width);
-        console.log(e)
-        //this.toUseBlock(img, "open", w);
-  
-        e.addEventListener("mouseleave", () =>{
-          console.log(e)
-          //this.toUseBlock(img, "close", w);
+    this.wrap.querySelector("#blocks").addEventListener("mouseenter", (event) => {
+      let e = event.target;
+      
+      if(e.className === "block"){
+        let width = parseInt(getComputedStyle(e.querySelector("div")).width);
+        
+        this.closeBlock(e, width);
+        e.addEventListener("mouseleave", () => {
+          this.openBlock(e, width);
         })
-      })
-    })
-
-    // this.wrap.querySelectorAll(".block").forEach((elem) =>{
-    //   elem.addEventListener("mouseleave", (event) =>{
-    //     let e = event.target;
-    //     this.toUseBlock(e, "close");
-    //   })
-    // })
+      }
+    },true)
+ 
     
   }
 
@@ -223,8 +218,12 @@ class Controller {
     this.model.moveMenuBar();
   }
 
-  toUseBlock(block, status, w){
-    this.model.getSizeBlock(block, status, w);
+  closeBlock(e, width){
+    this.model.closeImg(e, width);
+  }
+
+  openBlock(e, width){
+    this.model.openImg(e, width);
   }
 }
 
