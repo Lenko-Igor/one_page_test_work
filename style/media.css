@@ -562,6 +562,7 @@
   #slider_5 h2,
   #slider_6 h2 {
     width: 100%;
+    font-size: 37px;
   }
   .navBar {
     width: 100%;
@@ -574,6 +575,7 @@
   .content .slider > p {
     height: 100%;
     margin-bottom: 15px;
+    font-size: 18px;
   }
   .content .slider .detailed {
     margin-bottom: 140px;
@@ -610,5 +612,8 @@
   #slider_5 p,
   #slider_6 p {
     background-color: #ffffff6e;
+  }
+  footer {
+    height: 100%;
   }
 }
