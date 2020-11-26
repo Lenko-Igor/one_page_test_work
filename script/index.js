@@ -5,25 +5,20 @@ class View {
     this.wrap = wrap;
     this.btnUp = this.wrap.querySelector("#upBtn");
     this.init();
-    this.map = null;
-    //this.initMap();
-  }
-
-  init(){
-    this.btnUp.style.display = "none";
-  }
-
-  initMap(){
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 53.88995673217126, lng: 27.57493120092399},
       zoom: 18
     });
-    let marker = new google.maps.Marker({
-      position: {lat: 53.88995673217126, lng: 27.57493120092399},
-      map: map,
-      title: 'Информационные услуги в области безопасности',
-      icon: '../img/marker.svg',
-    });
+    // this.marker = new google.maps.Marker({
+    //   position: {lat: 53.88995673217126, lng: 27.57493120092399},
+    //   map: map,
+    //   title: 'Информационные услуги в области безопасности',
+    //   icon: '../img/marker.svg',
+    // });
+  }
+
+  init(){
+    this.btnUp.style.display = "none";
   }
 
   scroll(y){
@@ -252,11 +247,8 @@ class Controller {
         })
       }
     },true)
-    
-    const a = this.wrap.querySelector(".advantage");
 
-    let b = a.querySelectorAll(".plus");
-    b.forEach((elem) => {
+    this.wrap.querySelector(".advantage").querySelectorAll(".plus").forEach((elem) => {
       elem.addEventListener("click", () => {
         let block = elem.parentElement.lastElementChild;
         this.usePlus(block, elem);
