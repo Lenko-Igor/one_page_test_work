@@ -91,7 +91,15 @@ class View {
   drawImgBlockH(block, h){
     block.style.height = `${h}px`;
   }
-
+  
+  getBlockContent(block, elem){
+    const b = elem.parentElement.querySelectorAll(".plus");
+    
+    b.forEach((e) => {
+      e.classList.toggle("closed");
+    })
+    block.classList.toggle("closed");
+   }
 }
 
 // --- model --- //
@@ -200,6 +208,10 @@ class Model {
       }
     }
   }
+
+  getMoveContent(block, elem){
+    this.view.getBlockContent(block, elem);
+  }
 }
 
 // --- controller --- //
@@ -211,11 +223,11 @@ class Controller {
   }
 
   init(){
-    this.wrap.querySelector(".getUp").addEventListener("click", (event) => {
+    this.wrap.querySelector(".getUp").addEventListener("click", () => {
         this.toUp();
     })
 
-    this.wrap.querySelector(".menubar").addEventListener("click", (event) => {
+    this.wrap.querySelector(".menubar").addEventListener("click", () => {
       this.toUseMenuBar();
     })
 
@@ -240,6 +252,16 @@ class Controller {
         })
       }
     },true)
+    
+    const a = this.wrap.querySelector(".advantage");
+
+    let b = a.querySelectorAll(".plus");
+    b.forEach((elem) => {
+      elem.addEventListener("click", () => {
+        let block = elem.parentElement.lastElementChild;
+        this.usePlus(block, elem);
+      })
+    })
   }
 
   toUp(){
@@ -264,6 +286,10 @@ class Controller {
 
   openBlock(e, width, height){
     this.model.openImg(e, width, height);
+  }
+
+  usePlus(block, elem){
+    this.model.getMoveContent(block, elem);
   }
 }
 

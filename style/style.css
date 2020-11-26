@@ -571,17 +571,37 @@ header .wrapper > svg {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  position: relative;
+}
+.advantage .wrap .block .open {
+  width: 770px;
+  background: #ffffff; 
+  box-shadow: 0px 10px 20px rgba(206, 206, 206, 0.7);
+  border-radius: 10px;
+  position: absolute;
+  transition: height 1s;
+  z-index: 1;
+  top: 180px;
+}
+.advantage .wrap .block .open p{
+  width: 508px;
+  margin: 0 auto 15px;
+  text-align: justify;
+  font-size: 25px;
+}
+.closed {
+  display: none;
 }
 .advantage .wrap .block svg:first-of-type {
   margin: 41px 33px 0 41px;
 }
-.advantage .wrap .block svg:last-of-type {
+.advantage .wrap .block .plus {
   margin-top: 51px;
   margin-right: 50px;
   cursor: pointer;
   transition: transform 0.5s ;
 }
-.advantage .wrap .block svg:last-of-type:hover{
+.advantage .wrap .block .plus:hover{
   transform: scale(1.2);
 }
 .advantage .wrap .block p {
