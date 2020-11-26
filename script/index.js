@@ -5,10 +5,10 @@ class View {
     this.wrap = wrap;
     this.btnUp = this.wrap.querySelector("#upBtn");
     this.init();
-    this.map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 53.88995673217126, lng: 27.57493120092399},
-      zoom: 18
-    });
+    // this.map = new google.maps.Map(document.getElementById('map'), {
+    //   center: {lat: 53.88995673217126, lng: 27.57493120092399},
+    //   zoom: 18
+    // });
     // this.marker = new google.maps.Marker({
     //   position: {lat: 53.88995673217126, lng: 27.57493120092399},
     //   map: map,
