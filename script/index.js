@@ -9,6 +9,18 @@ class View {
 
   init(){
     this.btnUp.style.display = "none";
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map("YMapsID", {
+        center: [53.891853, 27.570859],
+        zoom: 18
+      });
+      var myPlacemark = new ymaps.Placemark([55.76, 37.56], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: '../img/marker.png',
+        iconImageSize: [75, 102],
+        iconImageOffset: [-3, -42]
+      });
+    });
   }
 
   scroll(y){

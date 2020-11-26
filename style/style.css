@@ -120,11 +120,11 @@ header .wrapper > svg {
   display: none;
 }
 #slider_1 h1,
-#slider_2 > p:first-child,
-#slider_3 > p:first-child,
-#slider_4 > p:first-child,
-#slider_5 > p:first-child,
-#slider_6 > p:first-child {
+#slider_2 h2,
+#slider_3 h2,
+#slider_4 h2,
+#slider_5 h2,
+#slider_6 h2 {
   margin-top: 260px;
   width: 735px;
   height: 121px;
@@ -347,10 +347,8 @@ header .wrapper > svg {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
 }
 .our_service .row .block a {
-  /* display: block; */
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
@@ -575,15 +573,15 @@ header .wrapper > svg {
 }
 .advantage .wrap .block .open {
   width: 770px;
-  background: #ffffff; 
-  box-shadow: 0px 10px 20px rgba(206, 206, 206, 0.7);
+  background: #ffffff;
+  box-shadow: 0px 25px 20px rgba(206, 206, 206, 0.7);
   border-radius: 10px;
   position: absolute;
   transition: height 1s;
   z-index: 1;
-  top: 180px;
+  top: 166px;
 }
-.advantage .wrap .block .open p{
+.advantage .wrap .block .open p {
   width: 508px;
   margin: 0 auto 15px;
   text-align: justify;
@@ -599,9 +597,9 @@ header .wrapper > svg {
   margin-top: 51px;
   margin-right: 50px;
   cursor: pointer;
-  transition: transform 0.5s ;
+  transition: transform 0.5s;
 }
-.advantage .wrap .block .plus:hover{
+.advantage .wrap .block .plus:hover {
   transform: scale(1.2);
 }
 .advantage .wrap .block p {
