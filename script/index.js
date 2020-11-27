@@ -1,3 +1,7 @@
+import {map} from './map.js'
+
+map();
+
 // --- view --- //
 class View {
   constructor(wrap){
@@ -8,26 +12,6 @@ class View {
 
   init(){
     this.btnUp.style.display = "none";
-    
-    ymaps.ready(function () {
-      var myMap = new ymaps.Map("YMapsID", {
-        center: [53.891853, 27.570859],
-        zoom: 18
-      },
-      {
-        searchControlProvider: "yandex#search",
-      }
-      );
-      var myPlacemark = new ymaps.Placemark(
-        myMap.getCenter(),
-        {
-          iconLayout: 'default#image',
-          iconImageHref: "../img/marker.png",
-          iconImageSize: [75, 102],
-        }
-      );
-      myMap.geoObjects.add(myPlacemark); 
-    }); 
   }
 
   scroll(y){
