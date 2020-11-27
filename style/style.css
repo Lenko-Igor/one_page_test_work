@@ -35,7 +35,9 @@ a:hover {
   right: 0;
   top: 80px;
   text-align: right;
-  background-color: #ffffff4d;
+  background-color: #ffffffe8;
+  border: none;
+  border-radius: 0px 0px 15px 15px;
   opacity: 0;
   display: none;
 }
@@ -70,6 +72,8 @@ header {
 header > svg:first-of-type {
   position: absolute;
   z-index: 1;
+  /* width: 47.24%;
+  height: 38%; */
 }
 header .wrapper > svg {
   position: absolute;
